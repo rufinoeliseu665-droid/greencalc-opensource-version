@@ -3,6 +3,8 @@
 # DESENVOLVIDO EXCLUSIVAMENTE POR: Rufino Catendi Atanácio Eliseu
 # TECNOLOGIAS: Python 3, Programação Orientada a Objetos
 # SEGMENTO: Green Fintech / Real World Assets (RWA) Tokenization
+# LICENÇA: GNU GPLv3 - Este código é aberto para fins acadêmicos, mas qualquer 
+# derivação ou uso deve obrigatoriamente citar a autoria original deste autor.
 
 class GreenCalcCore:
     def __init__(self):
