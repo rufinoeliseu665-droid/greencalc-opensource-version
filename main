@@ -1,0 +1,66 @@
+# PLATAFORMA TERMINAL GREENCALC – AUDITORIA AMBIENTAL RWA
+# PROPRIEDADE INTELECTUAL E AUTORIA:
+# DESENVOLVIDO EXCLUSIVAMENTE POR: Rufino Catendi Atanácio Eliseu
+# TECNOLOGIAS: Python 3, Programação Orientada a Objetos
+# SEGMENTO: Green Fintech / Real World Assets (RWA) Tokenization
+
+class GreenCalcCore:
+    def __init__(self):
+        # Encapsulamento de regras financeiras através de atributos privados
+        self.__objetivo_diario = 275.0       # Meta em toneladas de CO2
+        self.__preco_credito_usd = 75.50     # Preço do crédito em Dólar
+        self.__taxa_fintech = 0.02           # Taxa de serviço da plataforma (2%)
+
+    def calcular_protocolo(self, captura_real: float):
+        """Executa as regras de negócio e exibe o recibo criptográfico."""
+        
+        # Cálculos algorítmicos e estatísticos base
+        eficiencia = (captura_real / self.__objetivo_diario) * 100
+        faturamento_bruto = captura_real * self.__preco_credito_usd
+        taxa_custodia = faturamento_bruto * self.__taxa_fintech
+        valor_liquido = faturamento_bruto - taxa_custodia
+        desvio_meta = captura_real - self.__objetivo_diario
+
+        # Definição de status de conformidade ambiental
+        status_auditoria = "META ALCANÇADA" if eficiencia >= 100 else "ABAIXO DA META"
+
+        # Exibição do relatório formatado direto no terminal
+        print("\n" + "="*72)
+        print("         LIVRO DE REGISTRO DISTRIBUÍDO - PLATAFORMA GREENCALC")
+        print("="*72)
+        print(f"Status Operacional : {status_auditoria} ({eficiencia:.2f}%)")
+        print(f"Variação Volumétrica: {desvio_meta:+.2f} toneladas de GEE")
+        print(f"Tokens RWA Gerados : {captura_real:.2f} Unidades Lastreadas")
+        print("-" * 72)
+        print(f"Faturamento Bruto  : ${faturamento_bruto:,.2f} USD")
+        print(f"Taxa de Custódia (2%): ${taxa_custodia:,.2f} USD")
+        print(f"Saldo Líquido Real : ${valor_liquido:,.2f} USD")
+        print("-" * 72)
+        print("CONTRATO INTELIGENTE EXECUTADO E ASSINADO PROPRIETARIAMENTE POR:")
+        print("DEVELOPER: RUFINO CATENDI ATANÁCIO ELISEU")
+        print("="*72)
+
+
+# Fluxo de Controle e Execução do Terminal (Runtime)
+if __name__ == "__main__":
+    # Instanciação do objeto principal da Fintech
+    calculadora = GreenCalcCore()
+
+    print("\n SISTEMA CORPORATIVO GREENCALC V1.0 ")
+
+    while True:
+        try:
+            # Entrada de dados via console com sanitização
+            entrada = input("\nInsira o volume de CO2 capturado no dia (ton) ou 'sair': ")
+
+            if entrada.lower() == 'sair':
+                print("Encerrando o terminal de custódia ambiental.")
+                break
+
+            captura_dia = float(entrada)
+            
+            # Executa o cálculo e exibe o relatório
+            calculadora.calcular_protocolo(captura_dia)
+
+        except ValueError:
+            print("Por favor, insira um número válido para o volume de CO2.")
